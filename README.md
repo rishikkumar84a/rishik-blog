@@ -1,4 +1,4 @@
-# Rishik's Personal Blog
+# RKC Insights
 
 A personal blog website connected to Rishik Kumar Chaurasiya's portfolio. This blog features both public-facing content and a secure admin area for content management.
 
@@ -82,6 +82,34 @@ A personal blog website connected to Rishik Kumar Chaurasiya's portfolio. This b
 ## Connecting to Portfolio
 
 The blog is designed to integrate with the portfolio site at `https://rishikkumarchaurasiya.live/`. Links to the portfolio are included in the navigation and footer sections.
+
+## Deployment to GitHub
+
+Follow these steps to deploy this project to GitHub:
+
+1. Create a GitHub repository for your project
+2. Initialize Git in your local project folder (if not already done):
+   ```
+   git init
+   ```
+3. Add all files to Git:
+   ```
+   git add .
+   ```
+4. Commit the changes:
+   ```
+   git commit -m "Initial commit"
+   ```
+5. Add your GitHub repository as remote:
+   ```
+   git remote add origin https://github.com/yourusername/your-repo-name.git
+   ```
+6. Push to GitHub:
+   ```
+   git push -u origin main
+   ```
+
+Note: For a Node.js application like this, you'll need to use a hosting service that supports Node.js applications, such as Heroku, Vercel, or Netlify, as GitHub Pages only supports static websites.
 
 ## License
 
