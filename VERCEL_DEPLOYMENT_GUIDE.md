@@ -12,6 +12,15 @@ This guide will walk you through the process of deploying your RKC Insights blog
 
 1. Make sure your project is ready for production:
    - Ensure all dependencies are correctly listed in `package.json`
+   - Add build scripts to your package.json:
+     ```json
+     "scripts": {
+       "start": "node server.js",
+       "dev": "nodemon server.js",
+       "build": "npm install",
+       "vercel-build": "npm install"
+     }
+     ```
    - Verify that your application works locally
 
 2. Create a `vercel.json` file in the root of your project with the following configuration:
@@ -49,10 +58,12 @@ This guide will walk you through the process of deploying your RKC Insights blog
 3. Import your GitHub repository (rishik-blog)
 4. Configure the project:
    - Framework Preset: Select "Other"
-   - Build Command: Leave as default (Vercel will detect it from package.json)
-   - Output Directory: Leave as default
+   - Build Command: `npm run vercel-build` or `npm run build`
+   - Output Directory: `public` if it exists, or `.`
    - Install Command: `npm install`
    - Development Command: `npm run dev`
+
+   > Note: The configuration shown in the screenshot is correct and matches these recommended settings.
 
 5. Set up environment variables (from your `.env` file):
    - Click on "Environment Variables" and add the following:
