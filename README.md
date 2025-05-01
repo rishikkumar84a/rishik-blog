@@ -83,7 +83,9 @@ A personal blog website connected to Rishik Kumar Chaurasiya's portfolio. This b
 
 The blog is designed to integrate with the portfolio site at `https://rishikkumarchaurasiya.live/`. Links to the portfolio are included in the navigation and footer sections.
 
-## Deployment to GitHub
+## Deployment Options
+
+### Deployment to GitHub
 
 Follow these steps to deploy this project to GitHub:
 
@@ -109,7 +111,18 @@ Follow these steps to deploy this project to GitHub:
    git push -u origin main
    ```
 
-Note: For a Node.js application like this, you'll need to use a hosting service that supports Node.js applications, such as Heroku, Vercel, or Netlify, as GitHub Pages only supports static websites.
+Note: For a Node.js application like this, you'll need to use a hosting service that supports Node.js applications, as GitHub Pages only supports static websites.
+
+### Deployment to Vercel with Custom Subdomain
+
+This project can be deployed to Vercel with a custom subdomain. For detailed instructions, see the [VERCEL_DEPLOYMENT_GUIDE.md](./VERCEL_DEPLOYMENT_GUIDE.md) file, which includes:
+
+1. Preparing your project for Vercel deployment
+2. Setting up MongoDB Atlas for production
+3. Deploying to Vercel
+4. Configuring the custom subdomain (e.g., blog.rishikkumarchaurasiya.live)
+5. Setting up DNS records
+6. Verifying and maintaining your deployment
 
 ## License
 
