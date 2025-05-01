@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me | Rishik's Blog</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="description" content="Contact Rishik Kumar Chaurasiya - Get in touch through the contact form or social media">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="/">Rishik's Blog</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li class="dropdown">
+            <a href="#">Categories</a>
+            <div class="dropdown-content">
+              <% categories.forEach(category => { %>
+                <a href="/category/<%= category.name %>"><%= category.name %></a>
+              <% }); %>
+            </div>
+          </li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="https://rishikkumarchaurasiya.live/" target="_blank">Portfolio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <div class="container">
+        <h1>Get In Touch</h1>
+        <p class="contact-intro">Have a question or want to collaborate? Feel free to reach out using the form below or connect with me on social media.</p>
+        
+        <% if (typeof success !== 'undefined' && success) { %>
+          <div class="success-message">
+            <p>Thank you for your message! I'll get back to you as soon as possible.</p>
+          </div>
+        <% } %>
+        
+        <div class="contact-container">
+          <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form action="/contact" method="POST">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+          </div>
+          
+          <div class="contact-info">
+            <h2>Connect With Me</h2>
+            <div class="social-links">
+              <div class="social-link">
+                <span class="social-icon">LinkedIn</span>
+                <a href="https://linkedin.com/in/your-linkedin" target="_blank">linkedin.com/in/your-linkedin</a>
+              </div>
+              <div class="social-link">
+                <span class="social-icon">GitHub</span>
+                <a href="https://github.com/your-github" target="_blank">github.com/your-github</a>
+              </div>
+              <div class="social-link">
+                <span class="social-icon">WhatsApp</span>
+                <a href="https://wa.me/your-whatsapp-number" target="_blank">Send a message</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>Rishik's Blog</h3>
+          <p>Connecting thoughts with the world</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="https://rishikkumarchaurasiya.live/" target="_blank">Portfolio</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect With Me</h4>
+          <div class="social-icons">
+            <a href="https://linkedin.com/in/your-linkedin" target="_blank" class="social-icon">LinkedIn</a>
+            <a href="https://github.com/your-github" target="_blank" class="social-icon">GitHub</a>
+            <a href="https://wa.me/your-whatsapp-number" target="_blank" class="social-icon">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <%= new Date().getFullYear() %> Rishik Kumar Chaurasiya. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

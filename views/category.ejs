@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= category.name %> | Rishik's Blog</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="description" content="Browse all posts in the <%= category.name %> category on Rishik's Blog">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="/">Rishik's Blog</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li class="dropdown">
+            <a href="#">Categories</a>
+            <div class="dropdown-content">
+              <!-- Categories will be populated dynamically -->
+            </div>
+          </li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="https://rishikkumarchaurasiya.live/" target="_blank">Portfolio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="category-header">
+      <div class="container">
+        <h1>Category: <%= category.name %></h1>
+        <p>Browse all posts in this category</p>
+      </div>
+    </section>
+
+    <section class="blog-posts">
+      <div class="container">
+        <div class="posts-grid">
+          <% if (posts.length > 0) { %>
+            <% posts.forEach(post => { %>
+              <div class="post-card">
+                <% if (post.imageUrl) { %>
+                  <div class="post-image">
+                    <img src="<%= post.imageUrl %>" alt="<%= post.title %>">
+                  </div>
+                <% } %>
+                <div class="post-content">
+                  <h3><a href="/post/<%= post._id %>"><%= post.title %></a></h3>
+                  <div class="post-meta">
+                    <span class="category"><%= post.category %></span>
+                    <span class="date"><%= new Date(post.createdAt).toLocaleDateString() %></span>
+                  </div>
+                  <p><%= post.content.substring(0, 150) %>...</p>
+                  <a href="/post/<%= post._id %>" class="read-more">Read More</a>
+                </div>
+              </div>
+            <% }); %>
+          <% } else { %>
+            <p class="no-posts">No posts available in this category yet. Check back soon!</p>
+          <% } %>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>Rishik's Blog</h3>
+          <p>Connecting thoughts with the world</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="https://rishikkumarchaurasiya.live/" target="_blank">Portfolio</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect With Me</h4>
+          <div class="social-icons">
+            <a href="https://linkedin.com/in/your-linkedin" target="_blank" class="social-icon">LinkedIn</a>
+            <a href="https://github.com/your-github" target="_blank" class="social-icon">GitHub</a>
+            <a href="https://wa.me/your-whatsapp-number" target="_blank" class="social-icon">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <%= new Date().getFullYear() %> Rishik Kumar Chaurasiya. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
