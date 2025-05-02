@@ -147,9 +147,20 @@ a:hover {
   align-items: center;
 }
 
+.admin-logo {
+  display: flex;
+  align-items: center;
+}
+
 .admin-logo h1 {
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.admin-logo-img {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
 }
 
 .admin-nav ul {
